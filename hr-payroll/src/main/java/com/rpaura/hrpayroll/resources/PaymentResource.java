@@ -14,7 +14,7 @@ import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 
 @RestController
-@RequestMapping(value = "/payments")
+@RequestMapping("/payments")
 public class PaymentResource {
 
 	@Autowired
