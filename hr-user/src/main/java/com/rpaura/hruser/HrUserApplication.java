@@ -1,16 +1,14 @@
 package com.rpaura.hruser;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootApplication
 public class HrUserApplication implements CommandLineRunner{
 
-	@Autowired
-	private BCryptPasswordEncoder passwordEncoder;
+//	@Autowired
+//	private BCryptPasswordEncoder passwordEncoder;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(HrUserApplication.class, args);
@@ -18,7 +16,8 @@ public class HrUserApplication implements CommandLineRunner{
 	
 	@Override
 	public void run(String... args ) throws Exception {
-		System.out.print("BCRYPT = " + passwordEncoder.encode("124556"));
+		//Gerar senha quando necessário
+		//System.out.print("BCRYPT = " + passwordEncoder.encode("124556"));
 	}
 
 }
