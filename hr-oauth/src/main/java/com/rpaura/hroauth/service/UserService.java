@@ -19,8 +19,6 @@ public class UserService implements UserDetailsService {
 	@Autowired
 	private UserFeignClient userFeignClient;
 	
-	
-	//TODO- somente pra teste... para o security utilizar o loadUserByUsername
 	public User findByEmail(String email) {
 		User user = userFeignClient.findByEmail(email).getBody();
 		if (user == null) {
@@ -30,7 +28,7 @@ public class UserService implements UserDetailsService {
 		logger.info("Email found: " + email);
 		return user;
 	}
-
+	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		User user = userFeignClient.findByEmail(username).getBody();

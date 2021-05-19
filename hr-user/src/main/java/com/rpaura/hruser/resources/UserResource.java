@@ -12,7 +12,7 @@ import com.rpaura.hruser.entities.User;
 import com.rpaura.hruser.repository.UserRepository;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping(value = "/users")
 public class UserResource {
 
 	@Autowired
@@ -25,7 +25,7 @@ public class UserResource {
 	}
 	
 	@GetMapping(value = "/search")
-	public ResponseEntity<User> findById(@RequestParam String email) {
+	public ResponseEntity<User> findByEmail(@RequestParam String email) {
 		User obj = repository.findByEmail(email);
 		return ResponseEntity.ok(obj);
 	}
